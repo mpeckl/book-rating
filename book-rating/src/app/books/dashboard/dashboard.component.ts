@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
+import { BookRatingService } from '../shared/book-rating.service';
 
 @Component({
   selector: 'br-dashboard',
@@ -10,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
 
-  constructor() { }
+  constructor(private rs: BookRatingService) { }
 
   // Lifecycle Hook
   ngOnInit(): void {
@@ -33,11 +34,18 @@ export class DashboardComponent implements OnInit {
   }
 
   doRateUp(book: Book): void {
-    console.log('UP', book);
+    const ratedBook = this.rs.rateUp(book);
+    this.updateList(ratedBook);
   }
 
   doRateDown(book: Book): void {
-    console.log('DOWN', book);
+    const ratedBook = this.rs.rateDown(book);
+    this.updateList(ratedBook);
+  }
+
+  private updateList(book: Book): void {
+    this.books = this.books
+      .map(b => book.isbn === b.isbn ? book : b);
   }
 
 }
