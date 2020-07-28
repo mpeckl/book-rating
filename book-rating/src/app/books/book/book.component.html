@@ -9,6 +9,7 @@
       </h2>
     </div>
     <p>{{ book.description }}</p>
+    <p>Preis: {{ book.price | currency:'EUR' }}</p>
 
     <span *ngFor="let x of getStars()">⭐️</span>
 
