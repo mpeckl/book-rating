@@ -7,6 +7,7 @@ import { BookComponent } from './book/book.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     BookComponent,
     BookDetailsComponent,
-    CreateBookComponent
+    CreateBookComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
