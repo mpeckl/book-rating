@@ -1,12 +1,10 @@
-<ng-container *ngIf="book">
+<ng-container *ngIf="book$ | async as book">
   <h2>{{ book.title }}</h2>
 
   <p>
     {{ book.description }}
   </p>
 
-
-  <!--<br-book [book]="book"></br-book>-->
 </ng-container>
 
 <hr>
