@@ -26,8 +26,6 @@ export class EditBookComponent implements OnInit {
   }
 
   updateBook(book: Book): void {
-    console.log('isbn = ' + book.isbn);
-
     this.bs.update(book).subscribe(() => {
       this.router.navigate(['/books', book.isbn]);
     });

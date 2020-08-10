@@ -16,8 +16,6 @@ export class CreateBookParentComponent implements OnInit {
   }
 
   createBook(book: Book): void {
-    console.log('create book' + book.isbn);
-
     this.bs.create(book).subscribe(() => {
       this.router.navigate(['/books', book.isbn]);
     });

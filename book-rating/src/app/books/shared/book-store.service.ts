@@ -20,6 +20,10 @@ export class BookStoreService {
     return this.http.get<Book>(`${this.api}/book/${isbn}`);
   }
 
+  getSingleSlow(isbn: string): Observable<Book> {
+    return this.http.get<Book>(`${this.api}/book/${isbn}/slow`);
+  }
+
   create(book: Book): Observable<string> {
     return this.http.post(`${this.api}/book`, book, { responseType: 'text' });
   }

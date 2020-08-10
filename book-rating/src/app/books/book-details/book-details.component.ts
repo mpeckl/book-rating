@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 import { map, concatMap, switchMap } from 'rxjs/operators';
@@ -16,6 +16,7 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private bs: BookStoreService) { }
 
   ngOnInit(): void {
@@ -27,6 +28,13 @@ export class BookDetailsComponent implements OnInit {
       map(params => params.get('isbn')),
       switchMap(isbn => this.bs.getSingle(isbn))
     );
+  }
+
+  deleteBook(isbn: string): void {
+    this.bs.delete(isbn).subscribe(() => {
+      this.router.navigate(['/books']);
+    });
+
   }
 
 }

@@ -5,8 +5,13 @@
     {{ book.description }}
   </p>
 
-  <a [routerLink]="['../update', book.isbn]">Bearbeiten</a>
-</ng-container>
+  <div>
+    <button type="button" class="btn btn-danger mr-2" (click)="deleteBook(book.isbn)"> Löschen </button>
+
+    <a [routerLink]="['../update', book.isbn]">Bearbeiten</a>
+  </div>
+
+  </ng-container>
 
 <hr>
 
