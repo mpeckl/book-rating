@@ -30,6 +30,7 @@ export class BookComponent implements OnInit {
     this.rateDown.emit(this.book);
   }
 
+
   log(): void {
     console.log('CD');
   }

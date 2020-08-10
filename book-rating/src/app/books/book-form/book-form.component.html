@@ -1,0 +1,36 @@
+<h2>{{title}}</h2>
+
+<form [formGroup]="bookForm" (ngSubmit)="doSubmitBook()">
+
+  <button type="button" class="btn btn-warning" (click)="showErrors()">Show errors</button>
+
+  <div class="form-group">
+    <label>ISBN</label>
+    <input type="text" formControlName="isbn" class="form-control">
+
+    <div *ngIf="isInvalid('isbn')" class="feedback-error">Die ISBN ist ungültig.</div>
+    <div *ngIf="hasError('isbn', 'minlength')" class="feedback-error">Die ISBN ist zu kurz.</div>
+  </div>
+
+  <div class="form-group">
+    <label>Titel</label>
+    <input type="text" formControlName="title" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Beschreibung</label>
+    <textarea formControlName="description" class="form-control"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Preis</label>
+    <input type="number" formControlName="price" class="form-control">
+  </div>
+
+  <button type="submit" [disabled]="bookForm.invalid" class="btn btn-success">Abschicken</button>
+
+</form>
+
+<pre>
+{{ bookForm.value | json }}
+</pre>

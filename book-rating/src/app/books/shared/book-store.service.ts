@@ -28,5 +28,13 @@ export class BookStoreService {
     return this.http.get<Book[]>(`${this.api}/books/search/${term}`);
   }
 
+  update(book: Book): Observable<string> {
+    return this.http.put(`${this.api}/book/${book.isbn}`, book, { responseType: 'text' });
+  }
+
+  delete(isbn: string): Observable<string> {
+    return this.http.delete(`${this.api}/book/${isbn}`, { responseType: 'text' });
+  }
+
 
 }

@@ -4,10 +4,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { SearchComponent } from './search/search.component';
+import { CreateBookParentComponent } from './create-book-parent/create-book-parent.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'create', component: CreateBookComponent },
+  { path: 'createComponent', component: CreateBookParentComponent},
+  { path: 'update/:isbn', component: EditBookComponent},
   { path: 'search', component: SearchComponent },
   { path: ':isbn', component: BookDetailsComponent }
 ];

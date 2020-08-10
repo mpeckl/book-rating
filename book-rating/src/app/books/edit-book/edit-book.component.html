@@ -1,0 +1,4 @@
+<ng-container *ngIf="book$ | async as book">
+  <br-book-form [book]="book" title="Bearbeiten" (submitBook)="updateBook($event)">
+  </br-book-form>
+</ng-container>

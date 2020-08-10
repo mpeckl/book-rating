@@ -8,6 +8,9 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
+import { BookFormComponent } from './book-form/book-form.component';
+import { CreateBookParentComponent } from './create-book-parent/create-book-parent.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { SearchComponent } from './search/search.component';
     BookComponent,
     BookDetailsComponent,
     CreateBookComponent,
-    SearchComponent
+    SearchComponent,
+    BookFormComponent,
+    CreateBookParentComponent,
+    EditBookComponent
   ],
   imports: [
     CommonModule,
